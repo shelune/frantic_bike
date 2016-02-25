@@ -119,6 +119,16 @@ textarea {
     resize: vertical;
 }
 
+svg path.colorize {
+    fill: inherit;
+}
+
+svg path.removable {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}
+
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -400,8 +410,21 @@ h1 {
 .bike-display {
     align-items: center;
     padding-top: 10vh;
+
+    use {
+        fill: $color-blue;
+        stroke-width: 0.1;
+        stroke-opacity: 0.5;
+    }
+
+    use.trunk {
+        stroke-width: 0.25;
+    }
 }
 
+.svg-material {
+    display: none;
+}
 
 
 /* For Icon Font */
