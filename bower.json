@@ -1,0 +1,23 @@
+{
+  "name": "frantic_bike",
+  "description": "personal project for training exercise frantic",
+  "main": "js/main.js",
+  "authors": [
+    "shelune.github.io"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bulma": "~0.0.14",
+  }
+}

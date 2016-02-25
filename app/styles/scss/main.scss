@@ -1,0 +1,583 @@
+/* Importing Partials */
+@import 'partials/vars';
+@import 'partials/mixins';
+
+/* Importing Fonts */
+@import url(https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,700);
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url(#{$file-path}.woff);
+        src: url(#{$file-path}.woff?#iefix) format('embedded-opentype'), url(#{$file-path}.woff) format('woff'), url(#{$file-path}.ttf) format('truetype'), url(#{$file-path}.svg##{$font-family}) format('svg');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+@include font-face(Helium, '../../fonts/helium', normal, normal);
+
+@mixin Helium {
+    font-family: 'Helium';
+    font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    width: auto;
+    height: auto;
+}
+
+@mixin transition-ease {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+ }
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+	font-family: 'Lora', serif;
+}
+
+h1 {
+    font-family: 'Open Sans', san-serif;
+}
+
+.content-section {
+    padding: 5em 0;
+}
+
+.landing-page {
+    min-height: 80vh;
+    background: url('../../img/ppl-biking.jpg');
+    background-size: cover;
+
+    .title {
+        color: $color-light;
+        font-size: 60px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: 1em;
+        color: $color-light;
+    }
+}
+
+.navigation {
+
+    header {
+        margin: 0 auto;
+        width: 75vw;
+    }
+}
+
+.header__content {
+    transform: translateY(-50px);
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $color-light;
+        transform: translateY(-75px);
+        opacity: 0.25;
+    }
+}
+
+.header__nav {
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        a {
+            @include transition-ease;
+            color: $color-light;
+            margin: 0 1.5em;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    margin-right: auto;
+    align-self: flex-start;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* section 2 */
+
+.features {
+
+    .title {
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: 1em;
+    }
+}
+
+.features__list {
+    margin: 2.5em 0;
+
+    .title {
+        margin-bottom: 0.5em;
+    }
+
+    .icon {
+        font-size: 3em;
+        color: $color-accent;
+        margin: 0.25em 0.5em 0 0;
+        text-align: left;
+    }
+
+    li {
+        display: flex;
+        margin-top: 2.5em;
+        flex-flow: row nowrap;
+    }
+
+    p {
+        width: 90%;
+    }
+}
+
+.column--breakout {
+    position: absolute;
+    max-width: 50vw;
+    left: 0;
+}
+
+/* section 3 */
+
+.technical {
+    .column:not(.bike-display) {
+        padding: 1em;
+
+        &:first-child {
+            border-right: 0;
+        }
+    }
+
+    .title {
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: 1em;
+        position: relative;
+
+        &::after {
+            content: '';
+            margin-top: 0.5em;
+            position: absolute;
+            width: 100%;
+            background: $color-text-secondary;
+            opacity: 0.5;
+            height: 1px;
+            display: block;
+            right: 0;
+
+        }
+    }
+}
+
+.technical__content, .customize__content {
+    margin-top: 2em;
+
+    .content__block {
+        display: flex;
+        position: relative;
+        margin: 0.25em 0;
+        align-items: center;
+
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $color-text-primary;
+            content: '';
+            bottom: 0;
+        }
+    }
+
+    .item {
+        color: $color-text-primary;
+        margin-left: 0;
+        padding: 0.5em 0;
+    }
+
+    .figure {
+        margin-left: auto;
+        color: $color-accent;
+    }
+}
+
+.technical__figure {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 50px;
+        background-color: $color-text-primary;
+        right: 0;
+        transform: translateX(-60px);
+    }
+}
+
+.color-block, .number-block, .gender-block, .addon-block {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+.color-block.pink {
+    @extend color-block;
+    background-color: $color-pink;
+}
+
+.color-block.white {
+    @extend color-block;
+    background-color: $color-white;
+}
+
+.color-block.blue {
+    @extend color-block;
+    background-color: $color-blue;
+}
+
+.color-block.beige {
+    @extend color-block;
+    background-color: $color-beige;
+}
+
+.color-block.gold {
+    @extend color-block;
+    background-color: $color-gold;
+}
+
+.color-block.silver {
+    @extend color-block;
+    background-color: $color-silver;
+}
+
+.choice--color {
+    @include transition-ease;
+    display: none;
+    position: absolute;
+    flex-flow: row wrap;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .color-block {
+        margin-left: 0.5em;
+        width: 1.5em;
+    }
+}
+
+.choice--color.active {
+    display: flex;
+}
+
+/* bike section */
+.bike-display {
+    align-items: center;
+    padding-top: 10vh;
+}
+
+
+
+/* For Icon Font */
+.icon {
+    @include Helium;
+}
+
+.icon-hanger::before {
+	content: "\e63f";
+}
+
+.icon-paperplane::before {
+    content: "\e65d";
+}
+
+.icon-flash::before {
+    content: "\e63d";
+}
+
+.icon-boy::before {
+    content: "\e657";
+}
+
+.icon-girl::before {
+    content: "\e658";
+}
+
+.icon-cart::before {
+    content: "\e660"
+}
+
+.icon-crop::before {
+    content: "\e616"
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
