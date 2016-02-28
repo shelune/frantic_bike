@@ -290,6 +290,13 @@ h1 {
   .bike-display use.trunk {
     stroke-width: 0.25; }
 
+div.block--selected {
+  background: #eb5937;
+  color: #EEEFF7; }
+
+.customize__choice div {
+  cursor: pointer; }
+
 .svg-material {
   display: none; }
 

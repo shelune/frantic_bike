@@ -30,23 +30,21 @@
         }
     });
 
-    $('.addon-block span').click(function () {
-        $(this).closest('.addon-block').toggleClass('block--selected');
+    $('.customize__choice div').click(function () {
+        $(this).siblings().removeClass('block--selected');
+        $(this).toggleClass('block--selected');
         if ($('.addon-block').hasClass('block--selected')) {
-            if ($(this).hasClass('icon-cart')) {
-                $('#trunk').attr('class', 'colorize');
+            if ($(this).find('span').hasClass('icon-cart')) {
+                $('.trunk').attr('class', 'trunk colorize');
             } else {
-                $('#basket').attr('class', 'colorize');
+                $('.basket').attr('class', 'basket colorize');
             }
         } else {
-            if ($(this).hasClass('icon-cart')) {
-                $('#trunk').attr('class', 'colorize removable');
+            if ($(this).find('span').hasClass('icon-cart')) {
+                $('.trunk').attr('class', 'trunk colorize removable');
             } else {
-                $('#basket').attr('class', 'colorize removable');
+                $('.basket').attr('class', 'basket colorize removable');
             }
         }
-
-        console.log($('#trunk').attr('class'));
-        console.log($('.addon-block').attr('class'));
     });
 })();

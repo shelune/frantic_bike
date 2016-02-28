@@ -422,6 +422,17 @@ h1 {
     }
 }
 
+div.block--selected {
+    background: $color-accent;
+    color: $color-light;
+}
+
+.customize__choice {
+    div {
+        cursor: pointer;
+    }
+}
+
 .svg-material {
     display: none;
 }
