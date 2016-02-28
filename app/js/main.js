@@ -15,7 +15,7 @@
 
     $('.choice--color .color-block').click(function () {
         var targetColor = $(this).attr('class').substring(12);
-        $('.block--selected').attr('class', 'figure customize__figure color-block block--selected').addClass(targetColor);
+        $('.color-block.block--selected').attr('class', 'figure customize__figure color-block block--selected').addClass(targetColor);
         console.log(targetColor);
         $('.choice--color').removeClass('active');
         $('.bike-display use').css('fill', colorChoice[targetColor]);
