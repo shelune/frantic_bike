@@ -30,10 +30,13 @@
         }
     });
 
-    $('.customize__choice div').click(function () {
-        $(this).siblings().removeClass('block--selected');
+    $('.customize__choice > div').click(function () {
         $(this).toggleClass('block--selected');
-        if ($('.addon-block').hasClass('block--selected')) {
+        if (!$(this).hasClass('addon-block')) {
+            $(this).siblings().removeClass('block--selected');
+        }
+
+        if ($(this).hasClass('block--selected')) {
             if ($(this).find('span').hasClass('icon-cart')) {
                 $('.trunk').attr('class', 'trunk colorize');
             } else {
