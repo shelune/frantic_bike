@@ -34,20 +34,20 @@
         $(this).toggleClass('block--selected');
         if (!$(this).hasClass('addon-block')) {
             $(this).siblings().removeClass('block--selected');
-        }
-
-        if ($(this).hasClass('block--selected')) {
-            if ($(this).find('span').hasClass('icon-cart')) {
-                $('.trunk').attr('class', 'trunk colorize');
-            } else {
-                $('.basket').attr('class', 'basket colorize');
-            }
         } else {
-            if ($(this).find('span').hasClass('icon-cart')) {
-                $('.trunk').attr('class', 'trunk colorize removable');
+            if ($(this).hasClass('block--selected')) {
+                if ($(this).find('span').hasClass('icon-cart')) {
+                    $('.trunk').attr('class', 'trunk colorize');
+                } else {
+                    $('.basket').attr('class', 'basket colorize');
+                }
             } else {
-                $('.basket').attr('class', 'basket colorize removable');
+                if ($(this).find('span').hasClass('icon-cart')) {
+                    $('.trunk').attr('class', 'trunk colorize removable');
+                } else {
+                    $('.basket').attr('class', 'basket colorize removable');
+                }
             }
-        }
+        }        
     });
 })();

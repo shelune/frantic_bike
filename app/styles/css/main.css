@@ -106,7 +106,7 @@ h1 {
   font-family: 'Open Sans', san-serif; }
 
 .content-section {
-  padding: 5em 0; }
+  padding-top: 120px; }
 
 .landing-page {
   min-height: 80vh;
@@ -119,6 +119,8 @@ h1 {
   .landing-page .subtitle {
     margin-top: 1em;
     color: #EEEFF7; }
+  .landing-page .button {
+    margin-top: 2em; }
 
 .navigation header {
   margin: 0 auto;
@@ -156,15 +158,19 @@ h1 {
     width: 100%;
     height: 100%; }
 
-/* section 2 */
-.features .title {
+/* section features & design*/
+.features .title, .design .title {
   font-weight: 700; }
 
-.features .subtitle {
-  margin-top: 1em; }
+.features .subtitle, .design .subtitle {
+  margin-top: 1.5em; }
+
+.features .content > p, .design .content > p {
+  margin: 1.5em 0;
+  line-height: 1.5; }
 
 .features__list {
-  margin: 2.5em 0; }
+  margin: 3.5em 0; }
   .features__list .title {
     margin-bottom: 0.5em; }
   .features__list .icon {
@@ -174,17 +180,48 @@ h1 {
     text-align: left; }
   .features__list li {
     display: flex;
-    margin-top: 2.5em;
+    margin: 2em 0;
     flex-flow: row nowrap; }
   .features__list p {
     width: 90%; }
 
 .column--breakout {
   position: absolute;
-  max-width: 50vw;
+  max-width: 50vw; }
+
+.is-left {
   left: 0; }
 
-/* section 3 */
+.is-right {
+  right: 1em; }
+
+a.button--accent {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-color: #eb5937;
+  background-color: transparent;
+  color: #eb5937;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  height: auto; }
+  a.button--accent:hover {
+    color: #EEEFF7;
+    background-color: #e94620;
+    border-color: #eb5937; }
+
+/* transition */
+.transition {
+  background: #1c1919; }
+  .transition .content {
+    padding: 80px 0; }
+    .transition .content .title {
+      color: #EEEFF7;
+      font-weight: 700;
+      margin-bottom: 0.5em; }
+    .transition .content .button {
+      margin-top: 2em; }
+
+/* section technical & customization */
 .technical .column:not(.bike-display) {
   padding: 1em; }
   .technical .column:not(.bike-display):first-child {
