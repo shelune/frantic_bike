@@ -1,6 +1,7 @@
 /* Importing Partials */
 @import 'partials/vars';
 @import 'partials/mixins';
+@import 'dropdown';
 
 /* Importing Fonts */
 @import url(https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,700);
@@ -154,6 +155,10 @@ h1 {
 
 .content-section {
     padding-top: 120px;
+
+    .title {
+        font-weight: 700;
+    }
 }
 
 .landing-page {
@@ -316,7 +321,7 @@ a.button--accent {
         .title {
             color: $color-light;
             font-weight: 700;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.75em;
         }
 
         .button {
@@ -460,7 +465,7 @@ a.button--accent {
     display: flex;
 }
 
-/* bike section */
+/* section bike */
 .bike-display {
     align-items: center;
     padding-top: 10vh;
@@ -491,6 +496,96 @@ div.block--selected {
     display: none;
 }
 
+/* section purchase */
+
+.purchase {
+    margin-bottom: 120px; 
+    .subtitle {
+        margin-top: 1em;
+    }
+}
+
+.preorder-form {
+    margin: 3em auto;
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
+
+    .button {
+        order: 3;
+        margin-top: 10px;
+        line-height: 48px;
+        background: $color-accent;
+        color: $color-light;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1em;
+        font-size: 16px;
+        color: $color-accent;
+    }
+
+    input {
+        padding: 2em;
+        border: 1px solid $color-dark;
+        font-family: 'Lora', serif;
+        color: $color-text-secondary;
+
+        &:focus {
+            border-color: $color-accent;
+        }
+    }
+}
+
+#email-input {
+    padding-left: 4em;
+}
+
+/* section footer */
+
+footer {
+    width: 100%;
+    padding: 2em 0;
+    background-color: $color-text-secondary;
+}
+
+.footer__nav {
+    display: inline-block;
+    margin: 1em 2em 0;
+    color: $color-light;
+
+    ul {
+        display: flex;
+        flex-flow: column wrap;
+
+        li {
+            margin-right: 2em;
+        }
+
+        a {
+            color: currentColor;
+            @include transition-ease;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+}
+
+.copyright {
+    margin-top: 1em;
+    font-size: 0.85em;
+    text-align: right;
+
+    p > span {
+        color: $color-accent;
+    }
+}
+
 
 /* For Icon Font */
 .icon {
@@ -518,11 +613,19 @@ div.block--selected {
 }
 
 .icon-cart::before {
-    content: "\e660"
+    content: "\e660";
 }
 
 .icon-crop::before {
     content: "\e616"
+}
+
+.icon-pin::before {
+    content: "\e65b";
+}
+
+.icon-home::before {
+    content: "\e646";
 }
 
 
