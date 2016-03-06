@@ -8,7 +8,7 @@
         'beige': '#d1dbbd'
     };
 
-    $('.block--selected').click(function () {
+    $('.color-block.block--selected').click(function () {
         $('.choice--color').addClass('active');
         $(this).addClass('is-hidden-desktop');
     });
@@ -48,6 +48,13 @@
                     $('.basket').attr('class', 'basket colorize removable');
                 }
             }
+        }
+
+        if ($(this).hasClass('number-block')) {
+            var currentGear = $(this).find('span').text();
+            $('.technical__figure .highlight').removeClass('highlight');
+            $('.technical__figure').eq(1).find('span:contains(' + currentGear + ')').addClass('highlight');
+
         }
     });
 

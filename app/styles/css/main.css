@@ -420,6 +420,11 @@ a.button--accent {
     background-color: #1c1919;
     right: 0;
     transform: translateX(-60px); }
+  .technical__figure span {
+    transition: all 0.2s ease; }
+  .technical__figure span.highlight {
+    color: #e94620;
+    font-size: 1.5em; }
 
 .color-block, .number-block, .gender-block, .addon-block {
   display: inline-block;

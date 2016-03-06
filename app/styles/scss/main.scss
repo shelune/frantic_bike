@@ -407,6 +407,15 @@ a.button--accent {
         right: 0;
         transform: translateX(-60px);
     }
+
+    span {
+        transition: all 0.2s ease;
+    }
+
+    span.highlight {
+        color: $color-accent-hover;
+        font-size: 1.5em;
+    }
 }
 
 .color-block, .number-block, .gender-block, .addon-block {
@@ -499,7 +508,7 @@ div.block--selected {
 /* section purchase */
 
 .purchase {
-    margin-bottom: 120px; 
+    margin-bottom: 120px;
     .subtitle {
         margin-top: 1em;
     }
