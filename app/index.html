@@ -27,9 +27,21 @@
         <!-- Add your site or application content here -->
         <section class="landing-page">
             <div class="navigation">
+                <nav class="header__nav--touch">
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Technicals</a></li>
+                        <li><a href="#">Customization</a></li>
+                        <li><a href="#">Purchase</a></li>
+                    </ul>
+                </nav>
                 <header>
                     <div class="header__content">
                         <nav class="header__nav">
+                            <div class="brand--phone">
+                                <h4 class="title">BikeX</h4>
+                            </div>
                             <ul>
                                 <li class="logo"><a href="#">
                                     <svg>
@@ -42,12 +54,13 @@
                                 <li><a href="#">Customization</a></li>
                                 <li><a href="#">Purchase</a></li>
                             </ul>
+
                         </nav>
-                        <div class="nav-icon">
-                            <a href="">
-                                <span></span>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="nav-icon">
+                        <a href="#">
+                            <span></span>
+                        </a>
                     </div>
                 </header>
             </div>
@@ -164,36 +177,6 @@
                     </div>
                     <div class="column is-3">
                         <div class="column is-12 text-center">
-                            <h1 class="title is-4">Technicals</h1>
-                            <p class="subtitle is-6">The information below may vary according to the model purchased.</p>
-                            <ul class="technical__content">
-                                <li class="content__block test">
-                                    <span class="item technical__item">Weight</span>
-                                    <span class="figure technical__figure">12 lb</span>
-                                </li>
-                                <li class="content__block test">
-                                    <span class="item technical__item">Gears</span>
-                                    <span class="figure technical__figure"><span>3</span>/<span>5</span>/<span>9</span></span>
-                                </li>
-                                <li class="content__block">
-                                    <span class="item technical__item">Price</span>
-                                    <span class="figure technical__figure">359€</span>
-                                </li>
-                                <li class="content__block">
-                                    <span class="item technical__item">Frame Size</span>
-                                    <span class="figure technical__figure">20 in</span>
-                                </li>
-                                <li class="content__block">
-                                    <span class="item technical__item">Standover Height</span>
-                                    <span class="figure technical__figure">21 in</span>
-                                </li>
-                                <li class="content__block">
-                                    <span class="item technical__item">Wheel Size</span>
-                                    <span class="figure technical__figure">22 in</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="column is-12 text-center">
                             <h1 class="title is-4">Customization</h1>
                             <p class="subtitle is-6">The preview may or may not have intended changes due to illustration</p>
                             <ul class="customize__content">
@@ -252,6 +235,37 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="column is-12 text-center">
+                            <h1 class="title is-4">Technicals</h1>
+                            <p class="subtitle is-6">The information below may vary according to the model purchased.</p>
+                            <ul class="technical__content">
+                                <li class="content__block test">
+                                    <span class="item technical__item">Weight</span>
+                                    <span class="figure technical__figure">12 lb</span>
+                                </li>
+                                <li class="content__block test">
+                                    <span class="item technical__item">Gears</span>
+                                    <span class="figure technical__figure"><span>3</span>/<span>5</span>/<span>9</span></span>
+                                </li>
+                                <li class="content__block">
+                                    <span class="item technical__item">Price</span>
+                                    <span class="figure technical__figure">359€</span>
+                                </li>
+                                <li class="content__block">
+                                    <span class="item technical__item">Frame Size</span>
+                                    <span class="figure technical__figure">20 in</span>
+                                </li>
+                                <li class="content__block">
+                                    <span class="item technical__item">Standover Height</span>
+                                    <span class="figure technical__figure">21 in</span>
+                                </li>
+                                <li class="content__block">
+                                    <span class="item technical__item">Wheel Size</span>
+                                    <span class="figure technical__figure">22 in</span>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -260,7 +274,7 @@
 
         <section class="content-section">
             <div class="columns">
-                <div class="column is-12 transition">
+                <div class="column is-12 transition" id="purchase-transition">
                     <div class="content text-center">
                         <h1 class="title is-1">Join the hype and get one for yourself now!</h1>
                         <p class="subtitle is-5">BikeX is launched at retail stores in Helsinki / London / Paris / Tokyo / New York</p>

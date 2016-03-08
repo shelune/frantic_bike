@@ -251,6 +251,13 @@ h1 {
   padding-top: 120px; }
   .content-section .title {
     font-weight: 700; }
+  @media (max-width: 979px) {
+    .content-section .container {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+.container__content {
+  padding-bottom: 2em; }
 
 .landing-page {
   min-height: 80vh;
@@ -265,10 +272,16 @@ h1 {
     color: #EEEFF7; }
   .landing-page .button {
     margin-top: 2em; }
+  @media (max-width: 979px) {
+    .landing-page {
+      padding-right: 1em; } }
 
 .navigation header {
   margin: 0 auto;
   width: 75vw; }
+  @media (max-width: 598px) {
+    .navigation header {
+      width: 90vw; } }
 
 .header__content {
   transform: translateY(-50px);
@@ -281,6 +294,28 @@ h1 {
     background: #EEEFF7;
     transform: translateY(-75px);
     opacity: 0.25; }
+  @media (max-width: 979px) {
+    .header__content {
+      transform: translateY(0);
+      height: 200px;
+      display: flex;
+      align-items: center; }
+      .header__content::after {
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #EEEFF7;
+        content: '';
+        bottom: -10%;
+        left: 0; } }
+
+.brand--phone {
+  display: none; }
+  @media (max-width: 979px) {
+    .brand--phone {
+      display: block;
+      color: #EEEFF7; } }
 
 .header__nav ul {
   display: flex;
@@ -289,23 +324,104 @@ h1 {
   .header__nav ul a {
     transition: all 0.3s ease;
     color: #EEEFF7;
-    margin: 0 1.5em; }
+    margin: 0 1.5em;
+    position: relative; }
     .header__nav ul a:hover {
       color: #eb5937; }
+    .header__nav ul a:first-child {
+      margin-left: 0; }
+  @media (max-width: 979px) {
+    .header__nav ul li {
+      display: none; } }
+  @media (max-width: 598px) {
+    .header__nav ul li {
+      display: none; } }
+
+.nav-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  z-index: 100;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 3px solid #EEEFF7; }
+  .nav-icon::after, .nav-icon::before {
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background-color: #EEEFF7;
+    content: '';
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease; }
+  .nav-icon::before {
+    transform: translate(-50%, -50%) rotate(135deg); }
+  .nav-icon::after {
+    transform: translate(-50%, -50%) rotate(45deg); }
+  @media (max-width: 979px) {
+    .nav-icon {
+      display: block; } }
+
+.nav--open + header .nav-icon {
+  border-color: #eb5937; }
+  .nav--open + header .nav-icon::before, .nav--open + header .nav-icon::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #eb5937; }
+  .nav--open + header .nav-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg); }
+
+.header__nav--touch {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.95);
+  visibility: hidden;
+  opacity: 0; }
+  .header__nav--touch a {
+    color: #eb5937;
+    transition: all 0.3s ease; }
+    .header__nav--touch a:hover {
+      color: #e94620; }
+  .header__nav--touch ul {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap; }
+    .header__nav--touch ul li {
+      margin: 1em 0; }
+  @media (max-width: 979px) {
+    .header__nav--touch {
+      display: block;
+      transition: all 0.3s ease; } }
+
+.header__nav--touch.nav--open {
+  visibility: visible;
+  opacity: 1; }
 
 .logo {
   width: 300px;
   height: 300px;
   margin-right: auto;
-  align-self: flex-start; }
+  align-self: flex-start;
+  position: relative; }
   .logo svg {
     width: 100%;
     height: 100%; }
+  .logo span {
+    position: absolute; }
 
 /* section features & design*/
-.features .title, .design .title {
-  font-weight: 700; }
-
 .features .subtitle, .design .subtitle {
   margin-top: 1.5em; }
 
@@ -355,7 +471,9 @@ a.button--accent {
 
 /* transition */
 .transition {
-  background: #1c1919; }
+  background: #1c1919;
+  background: url("../../img/ppl-biking-3.JPG") center center;
+  background-size: cover; }
   .transition .content {
     padding: 80px 0; }
     .transition .content .title {
@@ -365,14 +483,18 @@ a.button--accent {
     .transition .content .button {
       margin-top: 2em; }
 
+#purchase-transition {
+  background: url("../../img/ppl-biking-2.JPG") bottom center;
+  background-size: cover; }
+
 /* section technical & customization */
 .technical .column:not(.bike-display) {
   padding: 1em; }
   .technical .column:not(.bike-display):first-child {
     border-right: 0; }
-
-.technical .title {
-  font-weight: 700; }
+    @media (max-width: 598px) {
+      .technical .column:not(.bike-display):first-child {
+        order: 3; } }
 
 .technical .subtitle {
   margin-top: 1em;
@@ -476,7 +598,7 @@ a.button--accent {
   .bike-display use.trunk {
     stroke-width: 0.25; }
 
-div.block--selected {
+div.block--selected:not(.color-block) {
   background: #eb5937;
   color: #EEEFF7; }
 
@@ -614,6 +736,9 @@ footer {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
+.lock-overflow {
+  overflow: hidden; }
+
 .invisible {
   visibility: hidden; }
 
@@ -635,6 +760,11 @@ footer {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media (max-width: 598px) {
+  .columns {
+    margin-left: 0;
+    margin-right: 0; } }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:

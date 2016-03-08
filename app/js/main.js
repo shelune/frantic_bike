@@ -58,6 +58,16 @@
         }
     });
 
+    $('.nav-icon').click(function () {
+        var headerPhone = $('.header__nav--touch');
+        $(headerPhone).toggleClass('nav--open');
+        $('body').toggleClass('lock-overflow');
+
+        $(headerPhone).on('touchmove', function (event) {
+            event.preventDefault();
+        });
+    });
+
     [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
 			new SelectFx(el);
 	});
