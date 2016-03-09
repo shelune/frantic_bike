@@ -1,51 +1,65 @@
 var gulp = require('gulp'),
-    runSequence = require('run-sequence'),
+    uglify = require('gulp-uglify'),
     del = require('del'),
-    browserSync = require('browser-sync'),
+    autoprefix = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    changed = require('gulp-changed'),
+    gulpIf = require('gulp-if'),
+    imagemin = require('gulp-imagemin'),
+    cache = require('gulp-cache'),
+    notify = require('gulp-notify'),
+    runSequence = require('run-sequence'),
+    useref = require('gulp-useref'),
+    htmlmin = require('gulp-htmlmin'),
     sass = require('gulp-sass'),
-    
-    plugins = require('gulp-load-plugins');
+
+    browserSync = require('browser-sync');
 
 gulp.task('useref', function () {
     return gulp.src('app/*.html')
-        .pipe(plugins.useref())
-        .pipe(plugins.gulpIf('*.js', plugins.uglify()))
-        .pipe(plugins.gulpIf('*.css', plugins.cssnano()))
-        .pipe(plugins.gulpIf('*.css', plugins.autoprefix({browsers: ['last 2 versions']})))
-        .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
-        .pipe(plugins.gulp.dest('build'))
-        .pipe(plugins.notify('Useref completed!'))
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulpIf('*.css', autoprefix({browsers: ['last 2 versions']})))
+        .pipe(useref())
+        .pipe(gulp.dest('build'))
+});
+
+gulp.task('html', ['sass'], function () {
+    return gulp.src('app/*.html')
+        .pipe(htmlmin())
+        .pipe(gulp.dest('build'))
 });
 
 gulp.task('images', function () {
-    var imgSrc = 'app/img/**/*.{gif,jpg,png,svg}',
+    var imgSrc = 'app/img/**/*',
         imgDst = 'build/img';
     return gulp.src(imgSrc)
-        .pipe(plugins.imagemin({
-            optimizationLevel: 5,
-            interlaced: true,
-            pngquant: true
-        }))
+        .pipe(changed(imgDst))
+        .pipe(imagemin())
         .pipe(gulp.dest(imgDst))
 });
 
 gulp.task('sass', function () {
     return gulp.src('app/styles/scss/*.scss')
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('app/styles/css'))
+});
+
+gulp.task('styles', function () {
+
+});
+
+gulp.task('assets', ['images'], function () {
+    var src = 'app/img/*.svg',
+        dst = 'build/img';
+
+    return gulp.src(src)
+        .pipe(gulp.dest(dst))
 });
 
 gulp.task('fonts', function () {
     var fontSrc = 'app/fonts/**/*',
         fontDst = 'build/fonts';
-
-    return gulp.src(fontSrc)
-        .pipe(gulp.dest(fontDst))
-});
-
-gulp.task('assets', function () {
-    var fontSrc = 'app/assets/**',
-        fontDst = 'build/assets';
 
     return gulp.src(fontSrc)
         .pipe(gulp.dest(fontDst))
@@ -78,7 +92,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('build', function () {
-    runSequence('clean', ['useref', 'images', 'fonts', 'assets']);
+    runSequence('clean', ['useref', 'fonts', 'html', 'assets']);
 });
 
 gulp.task('default', function () {

@@ -9,13 +9,13 @@
     };
 
     $('.color-block.block--selected').click(function () {
-        $('.choice--color').addClass('active');
-        $(this).addClass('is-hidden-desktop');
+        $('.choice--color').toggleClass('active');
+        $(this).toggleClass('is-hidden-desktop');
     });
 
-    $('.choice--color .color-block').click(function () {
+    $('.choice--color > .color-block').click(function () {
         var targetColor = $(this).attr('class').substring(12);
-        $('.color-block.block--selected').attr('class', 'figure customize__figure color-block block--selected').addClass(targetColor);
+        $('.color-block.block--selected').attr('class', 'figure customize__figure block--selected color-block ').addClass(targetColor);
         console.log(targetColor);
         $('.choice--color').removeClass('active');
         $('.bike-display use').css('fill', colorChoice[targetColor]);
@@ -58,17 +58,28 @@
         }
     });
 
+    // trigger header on phone display
     $('.nav-icon').click(function () {
         var headerPhone = $('.header__nav--touch');
         $(headerPhone).toggleClass('nav--open');
-        $('body').toggleClass('lock-overflow');
-
         $(headerPhone).on('touchmove', function (event) {
             event.preventDefault();
         });
     });
 
-    [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
-			new SelectFx(el);
+    // drop down list custom display
+    [].slice.call( document.querySelectorAll('select.cs-select')).forEach( function(el) {
+		new SelectFx(el);
 	});
+
+    $('.header__nav a, .header__nav--touch a').click(function (e) {
+        e.preventDefault();
+        $('.nav--open').removeClass('nav--open');
+        var anchorLink = $(this).attr('href');
+        console.log(anchorLink);
+        $('html, body').animate({
+            scrollTop: $(anchorLink).offset().top
+        }, 700);
+    });
+
 })();

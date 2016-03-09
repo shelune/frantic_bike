@@ -4,9 +4,6 @@ $color-text-primary: #1c1919;
 $color-text-secondary: #31353D;
 // heading font
 
-$color-hero: #EEEFF7;
-// header/hero
-
 $form-placeholder: #BCC1C3;
 // form placeholder text
 
@@ -29,13 +26,8 @@ $color-light: #EEEFF7;
 $color-dark: #1c1919;
 
 // Layout colours
-$section-dark: #F3F4F8;
 
-$footer-primary: #445878;
-
-// Keylines
-$keyline-color: #E6E9EA;
-$footer-keyline-color: #403d3c;
+$color-footer-primary: darken($color-text-secondary, 5%);
 
 // screen sizes
 

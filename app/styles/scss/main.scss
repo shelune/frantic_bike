@@ -3,19 +3,6 @@
 @import 'partials/mixins';
 @import 'dropdown';
 
-/* Importing Fonts */
-@import url(https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,700);
-
-@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
-    @font-face {
-        font-family: $font-family;
-        src: url(#{$file-path}.woff);
-        src: url(#{$file-path}.woff?#iefix) format('embedded-opentype'), url(#{$file-path}.woff) format('woff'), url(#{$file-path}.ttf) format('truetype'), url(#{$file-path}.svg##{$font-family}) format('svg');
-        font-weight: $font-weight;
-        font-style: $font-style;
-    }
-}
-
 @include font-face(Helium, '../../fonts/helium', normal, normal);
 
 @mixin Helium {
@@ -149,15 +136,17 @@ body {
 	font-family: 'Lora', serif;
 }
 
-h1 {
-    font-family: 'Open Sans', san-serif;
-}
-
+// items in each content section
 .content-section {
-    padding-top: 120px;
+    padding-top: 8em;
 
     .title {
         font-weight: 700;
+        font-family: 'Open Sans', san-serif;
+    }
+
+    .subtitle {
+        margin-top: 1em;
     }
 
     @include tablet {
@@ -178,6 +167,7 @@ h1 {
     padding-bottom: 2em;
 }
 
+// styling for landing page
 .landing-page {
     min-height: 80vh;
     background: url('../../img/ppl-biking.jpg');
@@ -186,7 +176,6 @@ h1 {
     .title {
         color: $color-light;
         font-size: 60px;
-        font-weight: 700;
     }
 
     .subtitle {
@@ -206,7 +195,7 @@ h1 {
 .navigation {
     header {
         margin: 0 auto;
-        width: 75vw;
+        width: 80vw;
 
         @include phone {
             width: 100vw;
@@ -249,6 +238,7 @@ h1 {
     }
 }
 
+// bikeX brand only for phone display
 .brand--phone {
     display: none;
 
@@ -259,6 +249,7 @@ h1 {
     }
 }
 
+// styling nav in header
 .header__nav {
     ul {
         display: flex;
@@ -285,12 +276,6 @@ h1 {
                 display: none;
             }
         }
-
-        @include phone {
-            li {
-                display: none;
-            }
-        }
     }
 }
 
@@ -298,8 +283,7 @@ h1 {
     display: none;
     cursor: pointer;
     position: absolute;
-    top: 10%;
-    right: 10%;
+    top: 11.5%;
     z-index: 100;
     height: 30px;
     width: 30px;
@@ -329,6 +313,11 @@ h1 {
 
     @include tablet {
         display: block;
+        right: 10vw;
+    }
+
+    @include phone {
+        right: 1em;
     }
 }
 
@@ -346,6 +335,7 @@ h1 {
     }
 }
 
+// overlay header for phone display
 .header__nav--touch {
     display: none;
     width: 100%;
@@ -395,21 +385,15 @@ h1 {
     width: 300px;
     height: 300px;
     margin-right: auto;
-    align-self: flex-start;
     position: relative;
 
     svg {
         width: 100%;
         height: 100%;
     }
-
-    span {
-        position: absolute;
-    }
 }
 
-/* section features & design*/
-
+/* styling section features & design*/
 .features, .design {
 
     .subtitle {
@@ -443,7 +427,7 @@ h1 {
     .icon {
         font-size: 3em;
         color: $color-accent;
-        margin: 0.25em 0.5em 0 0;
+        margin: 0.5em 0.5em 0 0;
         text-align: left;
     }
 
@@ -454,32 +438,19 @@ h1 {
     }
 
     p {
-        width: 90%;
+        flex-basis: 90%;
     }
 }
 
-.column--breakout {
-    position: absolute;
-    max-width: 50vw;
-}
-
-.is-left {
-    left: 0;
-}
-
-.is-right {
-    right: 1em;
-}
-
 a.button--accent {
+    text-transform: capitalize;
+    height: auto;
     padding: 0.5em 1em;
     font-size: 1em;
     border-color: $color-accent;
     background-color: transparent;
     color:$color-accent;
     @include transition-ease;
-    text-transform: capitalize;
-    height: auto;
 
     &:hover {
         color: $color-light;
@@ -488,11 +459,11 @@ a.button--accent {
     }
 }
 
-/* transition */
+/* style for section transition */
 
 .transition {
     background: $color-dark;
-    background: url('../../img/ppl-biking-3.JPG') center center;
+    background: url('../../img/ppl-biking-3.jpg') center center;
     background-size: cover;
 
 
@@ -515,13 +486,13 @@ a.button--accent {
     }
 }
 
-#purchase-transition {
-    background: url('../../img/ppl-biking-2.JPG') bottom center;
+.transition--purchase {
+    background: url('../../img/ppl-biking-2.jpg') bottom center;
     background-size: cover;
 }
 
-/* section technical & customization */
 
+/* section technical & customization */
 .technical {
     .column:not(.bike-display) {
         padding: 1em;
@@ -575,7 +546,6 @@ a.button--accent {
 
     .item {
         color: $color-text-primary;
-        margin-left: 0;
         padding: 0.5em 0;
     }
 
@@ -610,43 +580,29 @@ a.button--accent {
 
 .color-block, .number-block, .gender-block, .addon-block {
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
+    width: 24px;
+    height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.75);
 }
 
-.color-block.pink {
-    @extend color-block;
-    background-color: $color-pink;
-}
+// give color to blocks
+$colors: (
+    'pink': $color-pink,
+    'white': $color-white,
+    'blue': $color-blue,
+    'beige': $color-beige,
+    'gold': $color-gold,
+    'silver': $color-silver
+);
 
-.color-block.white {
-    @extend color-block;
-    background-color: $color-white;
-}
-
-.color-block.blue {
-    @extend color-block;
-    background-color: $color-blue;
-}
-
-.color-block.beige {
-    @extend color-block;
-    background-color: $color-beige;
-}
-
-.color-block.gold {
-    @extend color-block;
-    background-color: $color-gold;
-}
-
-.color-block.silver {
-    @extend color-block;
-    background-color: $color-silver;
+@each $key, $value in $colors {
+    .color-block.#{$key} {
+        @extend color-block;
+        background-color: $value;
+    }
 }
 
 .choice--color {
-    @include transition-ease;
     display: none;
     position: absolute;
     flex-flow: row wrap;
@@ -656,7 +612,6 @@ a.button--accent {
 
     .color-block {
         margin-left: 0.5em;
-        width: 1.5em;
     }
 }
 
@@ -666,7 +621,6 @@ a.button--accent {
 
 /* section bike */
 .bike-display {
-    align-items: center;
     padding-top: 10vh;
 
     use {
@@ -676,7 +630,7 @@ a.button--accent {
     }
 
     use.trunk {
-        stroke-width: 0.25;
+        stroke-width: 0.5;
     }
 }
 
@@ -692,16 +646,12 @@ div.block--selected:not(.color-block) {
 }
 
 .svg-material {
-    display: none;
+    display: none !important;
 }
 
 /* section purchase */
-
 .purchase {
-    margin-bottom: 120px;
-    .subtitle {
-        margin-top: 1em;
-    }
+    margin-bottom: 8em;
 }
 
 .preorder-form {
@@ -733,7 +683,7 @@ div.block--selected:not(.color-block) {
         font-family: 'Lora', serif;
         color: $color-text-secondary;
 
-        &:focus {
+        &:focus, &:active {
             border-color: $color-accent;
         }
     }
@@ -750,9 +700,8 @@ div.block--selected:not(.color-block) {
 /* section footer */
 
 footer {
-    width: 100%;
     padding: 2em 0;
-    background-color: $color-text-secondary;
+    background-color: $color-footer-primary;
 }
 
 .footer__nav {
@@ -780,16 +729,12 @@ footer {
 }
 
 .copyright {
-    margin-top: 1em;
+    margin: 1em;
     font-size: 0.85em;
     text-align: right;
 
     p > span {
         color: $color-accent;
-    }
-
-    @include phone {
-        text-align: center;
     }
 }
 

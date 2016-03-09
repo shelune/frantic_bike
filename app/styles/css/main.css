@@ -1,6 +1,5 @@
 /* Importing Partials */
 /* Default custom select styles */
-@import url(https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,700);
 div.cs-select {
   display: inline-block;
   vertical-align: middle;
@@ -148,7 +147,6 @@ div.cs-skin-border {
   background: #e94620;
   color: #EEEFF7; }
 
-/* Importing Fonts */
 @font-face {
   font-family: Helium;
   src: url(../../fonts/helium.woff);
@@ -250,13 +248,13 @@ svg path.removable {
 body {
   font-family: 'Lora', serif; }
 
-h1 {
-  font-family: 'Open Sans', san-serif; }
-
 .content-section {
-  padding-top: 120px; }
+  padding-top: 8em; }
   .content-section .title {
-    font-weight: 700; }
+    font-weight: 700;
+    font-family: 'Open Sans', san-serif; }
+  .content-section .subtitle {
+    margin-top: 1em; }
   @media (max-width: 979px) {
     .content-section .container {
       padding-left: 1em;
@@ -274,8 +272,7 @@ h1 {
   background-size: cover; }
   .landing-page .title {
     color: #EEEFF7;
-    font-size: 60px;
-    font-weight: 700; }
+    font-size: 60px; }
   .landing-page .subtitle {
     margin-top: 1em;
     color: #EEEFF7; }
@@ -287,7 +284,7 @@ h1 {
 
 .navigation header {
   margin: 0 auto;
-  width: 75vw; }
+  width: 80vw; }
   @media (max-width: 598px) {
     .navigation header {
       width: 100vw;
@@ -343,16 +340,12 @@ h1 {
   @media (max-width: 979px) {
     .header__nav ul li {
       display: none; } }
-  @media (max-width: 598px) {
-    .header__nav ul li {
-      display: none; } }
 
 .nav-icon {
   display: none;
   cursor: pointer;
   position: absolute;
-  top: 10%;
-  right: 10%;
+  top: 11.5%;
   z-index: 100;
   height: 30px;
   width: 30px;
@@ -375,7 +368,11 @@ h1 {
     transform: translate(-50%, -50%) rotate(45deg); }
   @media (max-width: 979px) {
     .nav-icon {
-      display: block; } }
+      display: block;
+      right: 10vw; } }
+  @media (max-width: 598px) {
+    .nav-icon {
+      right: 1em; } }
 
 .nav--open + header .nav-icon {
   border-color: #eb5937; }
@@ -423,15 +420,12 @@ h1 {
   width: 300px;
   height: 300px;
   margin-right: auto;
-  align-self: flex-start;
   position: relative; }
   .logo svg {
     width: 100%;
     height: 100%; }
-  .logo span {
-    position: absolute; }
 
-/* section features & design*/
+/* styling section features & design*/
 .features .subtitle, .design .subtitle {
   margin-top: 1.5em; }
 
@@ -453,43 +447,33 @@ h1 {
   .features__list .icon {
     font-size: 3em;
     color: #eb5937;
-    margin: 0.25em 0.5em 0 0;
+    margin: 0.5em 0.5em 0 0;
     text-align: left; }
   .features__list li {
     display: flex;
     margin: 2em 0;
     flex-flow: row nowrap; }
   .features__list p {
-    width: 90%; }
-
-.column--breakout {
-  position: absolute;
-  max-width: 50vw; }
-
-.is-left {
-  left: 0; }
-
-.is-right {
-  right: 1em; }
+    flex-basis: 90%; }
 
 a.button--accent {
+  text-transform: capitalize;
+  height: auto;
   padding: 0.5em 1em;
   font-size: 1em;
   border-color: #eb5937;
   background-color: transparent;
   color: #eb5937;
-  transition: all 0.3s ease;
-  text-transform: capitalize;
-  height: auto; }
+  transition: all 0.3s ease; }
   a.button--accent:hover {
     color: #EEEFF7;
     background-color: #e94620;
     border-color: #eb5937; }
 
-/* transition */
+/* style for section transition */
 .transition {
   background: #1c1919;
-  background: url("../../img/ppl-biking-3.JPG") center center;
+  background: url("../../img/ppl-biking-3.jpg") center center;
   background-size: cover; }
   .transition .content {
     padding: 80px 0; }
@@ -502,8 +486,8 @@ a.button--accent {
     .transition .content .button {
       margin-top: 2em; }
 
-#purchase-transition {
-  background: url("../../img/ppl-biking-2.JPG") bottom center;
+.transition--purchase {
+  background: url("../../img/ppl-biking-2.jpg") bottom center;
   background-size: cover; }
 
 /* section technical & customization */
@@ -545,7 +529,6 @@ a.button--accent {
       bottom: 0; }
   .technical__content .item, .customize__content .item {
     color: #1c1919;
-    margin-left: 0;
     padding: 0.5em 0; }
   .technical__content .figure, .customize__content .figure {
     margin-left: auto;
@@ -569,8 +552,8 @@ a.button--accent {
 
 .color-block, .number-block, .gender-block, .addon-block {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: 24px;
+  height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.75); }
 
 .color-block.pink {
@@ -592,7 +575,6 @@ a.button--accent {
   background-color: #a69e9d; }
 
 .choice--color {
-  transition: all 0.3s ease;
   display: none;
   position: absolute;
   flex-flow: row wrap;
@@ -600,22 +582,20 @@ a.button--accent {
   top: 50%;
   transform: translateY(-50%); }
   .choice--color .color-block {
-    margin-left: 0.5em;
-    width: 1.5em; }
+    margin-left: 0.5em; }
 
 .choice--color.active {
   display: flex; }
 
 /* section bike */
 .bike-display {
-  align-items: center;
   padding-top: 10vh; }
   .bike-display use {
     fill: #2980b9;
     stroke-width: 0.1;
     stroke-opacity: 0.5; }
   .bike-display use.trunk {
-    stroke-width: 0.25; }
+    stroke-width: 0.5; }
 
 div.block--selected:not(.color-block) {
   background: #eb5937;
@@ -625,13 +605,11 @@ div.block--selected:not(.color-block) {
   cursor: pointer; }
 
 .svg-material {
-  display: none; }
+  display: none !important; }
 
 /* section purchase */
 .purchase {
-  margin-bottom: 120px; }
-  .purchase .subtitle {
-    margin-top: 1em; }
+  margin-bottom: 8em; }
 
 .preorder-form {
   margin: 3em auto;
@@ -656,7 +634,7 @@ div.block--selected:not(.color-block) {
     border: 1px solid #1c1919;
     font-family: 'Lora', serif;
     color: #31353D; }
-    .preorder-form input:focus {
+    .preorder-form input:focus, .preorder-form input:active {
       border-color: #eb5937; }
 
 #email-input {
@@ -667,9 +645,8 @@ div.block--selected:not(.color-block) {
 
 /* section footer */
 footer {
-  width: 100%;
   padding: 2em 0;
-  background-color: #31353D; }
+  background-color: #26292f; }
 
 .footer__nav {
   display: inline-block;
@@ -687,14 +664,11 @@ footer {
         color: #eb5937; }
 
 .copyright {
-  margin-top: 1em;
+  margin: 1em;
   font-size: 0.85em;
   text-align: right; }
   .copyright p > span {
     color: #eb5937; }
-  @media (max-width: 598px) {
-    .copyright {
-      text-align: center; } }
 
 /* For Icon Font */
 .icon {

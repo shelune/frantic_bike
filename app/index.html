@@ -6,16 +6,16 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
         <link rel="shortcut icon" href="favicon.png">
 
-        <!-- build:css styles/main.css -->
-        <link rel="stylesheet" href="styles/css/normalize.css">
+        <!-- build:css styles/css/main.css -->
         <link rel="stylesheet" href="styles/css/bulma.min.css">
         <link rel="stylesheet" href="styles/css/main.css">
         <!-- endbuild -->
 
-        <!-- build:js scripts/modernizr.js -->
+        <!-- build:js js/modernizr.js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <!-- endbuild -->
     </head>
@@ -29,11 +29,11 @@
             <div class="navigation">
                 <nav class="header__nav--touch">
                     <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Technicals</a></li>
-                        <li><a href="#">Customization</a></li>
-                        <li><a href="#">Purchase</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#design">Design</a></li>
+                        <li><a href="#technicals">Technicals</a></li>
+                        <li><a href="#customization">Customization</a></li>
+                        <li><a href="#purchase">Purchase</a></li>
                     </ul>
                 </nav>
                 <header>
@@ -48,11 +48,11 @@
                                         <use xlink:href="img/bikexlogo-w.svg#bikex-logo"></use>
                                     </svg>
                                 </a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Technicals</a></li>
-                                <li><a href="#">Customization</a></li>
-                                <li><a href="#">Purchase</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#design">Design</a></li>
+                                <li><a href="#technicals">Technicals</a></li>
+                                <li><a href="#customization">Customization</a></li>
+                                <li><a href="#purchase">Purchase</a></li>
                             </ul>
 
                         </nav>
@@ -77,7 +77,7 @@
             </div>
         </section>
 
-        <section class="content-section features">
+        <section class="content-section features" id="features">
             <div class="container is-fluid">
                 <div class="columns">
                     <div class="column is-7">
@@ -132,7 +132,7 @@
             </div>
         </section>
 
-        <section class="content-section design">
+        <section class="content-section design" id="design">
             <div class="container is-fluid">
                 <div class="columns">
                     <div class="column is-4 is-offset-1">
@@ -142,7 +142,7 @@
                                 <p>We’ve designed a brand new bike concept without any unnecessary clutter taking the spotlight away from the beautiful, minimalistic design. It'll pop on the streets and reflect your stylish personality.</p>
                                 <p>You can also choose from our large variety of addon equipment to enhance the functionality of BikeX, yet still retain its magnificent design.</p>
                             </div>
-                            <a href="#" class="button button--accent">What's the Inspiration?</a>
+                            <a href="#" class="button button--accent">The Inspiration Behind</a>
                         </div>
                     </div>
                     <div class="column is-7">
@@ -157,7 +157,7 @@
 
         <section class="content-section">
             <div class="columns">
-                <div class="column is-12 transition">
+                <div class="column is-12 transition transition--technical">
                     <div class="content text-center">
                         <h1 class="title is-1">Preview BikeX customization and get technical info</h1>
                         <p class="subtitle is-5">Swap out components / Adjust gears / Change theme colors / etc., all up to you!</p>
@@ -176,14 +176,14 @@
                         </svg>
                     </div>
                     <div class="column is-3">
-                        <div class="column is-12 text-center">
+                        <div class="column is-12 text-center" id="customization">
                             <h1 class="title is-4">Customization</h1>
                             <p class="subtitle is-6">The preview may or may not have intended changes due to illustration</p>
                             <ul class="customize__content">
                                 <li class="content__block">
                                     <span class="item customize__item">Colors</span>
-                                    <div class="figure customize__figure color-block block--selected"></div>
-                                    <div class="customize__choice choice--color">
+                                    <div class="figure blue color-block block--selected"></div>
+                                    <div class="choice--color">
                                         <div class="color-block pink"></div>
                                         <div class="color-block white"></div>
                                         <div class="color-block blue"></div>
@@ -235,7 +235,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="column is-12 text-center">
+                        <div class="column is-12 text-center" id="technicals">
                             <h1 class="title is-4">Technicals</h1>
                             <p class="subtitle is-6">The information below may vary according to the model purchased.</p>
                             <ul class="technical__content">
@@ -245,7 +245,7 @@
                                 </li>
                                 <li class="content__block test">
                                     <span class="item technical__item">Gears</span>
-                                    <span class="figure technical__figure"><span>3</span>/<span>5</span>/<span>9</span></span>
+                                    <span class="figure technical__figure"><span class="highlight">3</span>/<span>5</span>/<span>9</span></span>
                                 </li>
                                 <li class="content__block">
                                     <span class="item technical__item">Price</span>
@@ -274,7 +274,7 @@
 
         <section class="content-section">
             <div class="columns">
-                <div class="column is-12 transition" id="purchase-transition">
+                <div class="column is-12 transition transition--purchase">
                     <div class="content text-center">
                         <h1 class="title is-1">Join the hype and get one for yourself now!</h1>
                         <p class="subtitle is-5">BikeX is launched at retail stores in Helsinki / London / Paris / Tokyo / New York</p>
@@ -283,7 +283,7 @@
             </div>
         </section>
 
-        <section class="content-section purchase">
+        <section class="content-section purchase" id="purchase">
             <div class="container">
                 <div class="columns">
                     <div class="column is-8 is-offset-2 text-center">
@@ -963,11 +963,13 @@
             </svg>
         </div>
 
+        <!--build:js js/main.js-->       
         <script src="js/vendor/jquery-1.11.3.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/classie.js"></script>
         <script src="js/dropdown.js"></script>
         <script src="js/main.js"></script>
+        <!-- endbuild -->
 
 
     </body>
