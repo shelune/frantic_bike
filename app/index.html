@@ -78,16 +78,16 @@
         </section>
 
         <section class="content-section features">
-            <div class="column--breakout is-5">
-                <div class="section__figure">
-                    <figure class="feature__display">
-                        <img src="img/bicycle_PNG5392.png" alt="">
-                    </figure>
-                </div>
-            </div>
-            <div class="container">
+            <div class="container is-fluid">
                 <div class="columns">
-                    <div class="column is-7 is-offset-7">
+                    <div class="column is-7">
+                        <div class="section__figure">
+                            <figure class="feature__display">
+                                <img src="img/bicycle_PNG5392.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column is-4">
                         <div class="features__content">
                             <h1 class="title is-4">Effortless travelling with BikeX</h1>
                             <p class="subtitle is-5">Featuring freshing functions that can be found nowhere but in our product.</p>
@@ -145,7 +145,7 @@
                             <a href="#" class="button button--accent">What's the Inspiration?</a>
                         </div>
                     </div>
-                    <div class="column is-9 is-right">
+                    <div class="column is-7">
                         <div class="section__design">
                             <figure class="design__display">
                                 <img src="img/MEC_Road_Bike_transparent_905.png" alt=""></figure>
@@ -290,12 +290,12 @@
                         <h1 class="title is-4">Pre-order from your location's retailer right now</h1>
                         <p class="subtitle is-5">Also grab our subscription for free once you registered</p>
                         <form action="" class="preorder-form">
-                            <a href="#" class="button button--accent">Submit</a>
+                            <a class="button button--accent">Submit</a>
                             <p class="control has-icon">
-                                <input type="email" class="input" placeholder="Enter email address" id="email-input">
+                                <input required type="email" class="input" placeholder="Enter email address" id="email-input">
                                 <i class="icon icon-home"></i>
                             </p>
-                            <select class="cs-select cs-skin-border">
+                            <select required class="cs-select cs-skin-border">
                                 <option value="" disabled selected>Choose your retailer</option>
                                 <option value="1">Helsinki</option>
                                 <option value="2">London</option>

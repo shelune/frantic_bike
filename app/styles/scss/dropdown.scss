@@ -1,5 +1,6 @@
 /* Default custom select styles */
 @import "../scss/partials/vars";
+@import "../scss/partials/mixins";
 
 div.cs-select {
 	display: inline-block;
@@ -36,6 +37,10 @@ div.cs-select:focus {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	@include phone {
+		font-size: 12px;
+	}
 }
 
 /* Placeholder and selected option */
@@ -119,6 +124,10 @@ div.cs-skin-border {
 	font-family: 'Helium';
 	content: '\e65b';
 	color: $color-accent;
+
+	@include phone {
+		font-size: 14px;
+	}
 }
 
 .cs-skin-border ul span::after {

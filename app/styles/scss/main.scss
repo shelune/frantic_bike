@@ -166,6 +166,12 @@ h1 {
             padding-right: 1em;
         }
     }
+
+    @include phone {
+        .title {
+            font-size: 36px;
+        }
+    }
 }
 
 .container__content {
@@ -203,7 +209,8 @@ h1 {
         width: 75vw;
 
         @include phone {
-            width: 90vw;
+            width: 100vw;
+            padding: 0 1em;
         }
     }
 
@@ -413,6 +420,17 @@ h1 {
         margin: 1.5em 0;
         line-height: 1.5;
     }
+
+    @include tablet {
+        .columns {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .column.is-7 {
+            order: 2;
+        }
+    }
 }
 
 .features__list {
@@ -485,6 +503,10 @@ a.button--accent {
             color: $color-light;
             font-weight: 700;
             margin-bottom: 0.75em;
+        }
+
+        .subtitle {
+            color: $color-light;
         }
 
         .button {
@@ -719,6 +741,10 @@ div.block--selected:not(.color-block) {
 
 #email-input {
     padding-left: 4em;
+
+    @include phone {
+        font-size: 12px;
+    }
 }
 
 /* section footer */
@@ -760,6 +786,10 @@ footer {
 
     p > span {
         color: $color-accent;
+    }
+
+    @include phone {
+        text-align: center;
     }
 }
 

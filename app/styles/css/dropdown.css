@@ -32,6 +32,9 @@ div.cs-select:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+  @media (max-width: 598px) {
+    .cs-select span {
+      font-size: 12px; } }
 
 /* Placeholder and selected option */
 .cs-select > span {
@@ -101,6 +104,9 @@ div.cs-skin-border {
   font-family: 'Helium';
   content: '\e65b';
   color: #eb5937; }
+  @media (max-width: 598px) {
+    .cs-skin-border > span::after {
+      font-size: 14px; } }
 
 .cs-skin-border ul span::after {
   content: '';

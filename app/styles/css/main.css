@@ -34,6 +34,9 @@ div.cs-select:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+  @media (max-width: 598px) {
+    .cs-select span {
+      font-size: 12px; } }
 
 /* Placeholder and selected option */
 .cs-select > span {
@@ -103,6 +106,9 @@ div.cs-skin-border {
   font-family: 'Helium';
   content: '\e65b';
   color: #eb5937; }
+  @media (max-width: 598px) {
+    .cs-skin-border > span::after {
+      font-size: 14px; } }
 
 .cs-skin-border ul span::after {
   content: '';
@@ -255,6 +261,9 @@ h1 {
     .content-section .container {
       padding-left: 1em;
       padding-right: 1em; } }
+  @media (max-width: 598px) {
+    .content-section .title {
+      font-size: 36px; } }
 
 .container__content {
   padding-bottom: 2em; }
@@ -281,7 +290,8 @@ h1 {
   width: 75vw; }
   @media (max-width: 598px) {
     .navigation header {
-      width: 90vw; } }
+      width: 100vw;
+      padding: 0 1em; } }
 
 .header__content {
   transform: translateY(-50px);
@@ -429,6 +439,13 @@ h1 {
   margin: 1.5em 0;
   line-height: 1.5; }
 
+@media (max-width: 979px) {
+  .features .columns, .design .columns {
+    display: flex;
+    flex-flow: column wrap; }
+  .features .column.is-7, .design .column.is-7 {
+    order: 2; } }
+
 .features__list {
   margin: 3.5em 0; }
   .features__list .title {
@@ -480,6 +497,8 @@ a.button--accent {
       color: #EEEFF7;
       font-weight: 700;
       margin-bottom: 0.75em; }
+    .transition .content .subtitle {
+      color: #EEEFF7; }
     .transition .content .button {
       margin-top: 2em; }
 
@@ -642,6 +661,9 @@ div.block--selected:not(.color-block) {
 
 #email-input {
   padding-left: 4em; }
+  @media (max-width: 598px) {
+    #email-input {
+      font-size: 12px; } }
 
 /* section footer */
 footer {
@@ -670,6 +692,9 @@ footer {
   text-align: right; }
   .copyright p > span {
     color: #eb5937; }
+  @media (max-width: 598px) {
+    .copyright {
+      text-align: center; } }
 
 /* For Icon Font */
 .icon {
